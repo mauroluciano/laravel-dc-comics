@@ -14,24 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('comics', function (Blueprint $table) {
-
-// create_houses_table
-
-public function up()
-  {
-    Schema::create('comics', function (Blueprint $table) {
-        $table->id();
-        $table->string('title', 50);
-        $table->string('description', 250);
-        $table->string('thumb' 500);
-        $table->float('price', 5, 2);
-        $table->string('series', 15);
-        $table->date('sale_date');
-        $table->string('artists', 50);
-        $table->string('writers', 50);
-        $table->timestamps();
-    });
-  }
+            $table->id();
+            $table->string('title', 50);
+            $table->string('description', 250);
+            $table->string('thumb');
+            $table->float('price', 5, 2);
+            $table->string('series', 15);
+            $table->date('sale_date');
+            $table->string('artists', 50);
+            $table->string('writers', 50);
+            $table->timestamps();
+        });
     }
 
     /**
