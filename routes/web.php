@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\HouseController;
+use App\Http\Controllers\ComicController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('home');
-Route::get('/comics', [ComicsController::class, 'index'])->name('comics.index');
+Route::get('/comic', [ComicController::class, 'index'])->name('comic.index');
