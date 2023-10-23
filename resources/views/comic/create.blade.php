@@ -2,7 +2,7 @@
 
 @section('main-content')
 <div class='container'>
-    <a href="{{route('comics.index')}}" class="btn btn-primary">Torna alla lista</a>
+    <a href="{{route('comic.index')}}" class="btn btn-primary">Torna alla lista</a>
     <h1>Insert a new comic</h1>
 {{-- * Conditions for printing errors --}}
 @if($errors->any())
@@ -14,7 +14,7 @@
 </ul>
 @endif
 
-    <form action="{{route('comics.store')}}" method="POST" class="row g-3">
+    <form action="{{route('comic.store')}}" method="POST" class="row g-3">
         @csrf
         <div class="col-4">
             <label for="title">Title</label>

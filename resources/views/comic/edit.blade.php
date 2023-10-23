@@ -3,8 +3,8 @@
 @section('main-content')
 <div class='container'>
     {{-- Buttons to navigate --}}
-    <a href="{{route('comics.index')}}" class="btn btn-primary">Torna alla lista</a>
-    <a href="{{route('comics.show', $comic)}}" class="btn btn-success">Torna i dettagli</a>
+    <a href="{{route('comic.index')}}" class="btn btn-primary">Torna alla lista</a>
+    <a href="{{route('comic.show', $comics)}}" class="btn btn-success">Torna i dettagli</a>
 
     <h1>Edit Comic</h1>
     {{-- * Conditions to display errors --}}
@@ -18,7 +18,7 @@
     @endif
 
 
-    <form action="{{route('comics.update', $comic)}}" method="POST" class="row g-3">
+    <form action="{{route('comic.update', $comic)}}" method="POST" class="row g-3">
         {{-- Token --}}
         @csrf
         {{-- Method to use instead POST --}}
