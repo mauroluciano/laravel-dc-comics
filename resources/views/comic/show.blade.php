@@ -4,13 +4,13 @@
 
 <div class="container ">
   {{-- Buttons to navigate --}}
-  <a href="{{route('comic.index')}}" class="btn btn-primary">Torna alla lista</a>
-  <a href="{{route('comic.edit', $comic)}}" class="btn btn-warning">Modifica</a>
+  <a href="{{route('comic.index')}}" class="btn btn-primary">torna alle comic</a>
+  <a href="{{route('comic.edit', $comic)}}" class="btn btn-warning">modifica Comic</a>
 
     <div class="card my-3" style="max-width: 100%;">
         <div class="row g-0">
           <div class="col-md-3">
-            <img src="{{$comics->thumb}}" class="img-fluid rounded-start" alt="comic image">
+            <img src="{{$comic->thumb}}" class="img-fluid rounded-start" alt="comic image">
           </div>
           <div class="col-md-9">
             <div class="card-body">

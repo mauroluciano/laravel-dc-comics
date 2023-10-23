@@ -40,10 +40,10 @@
           <td>{{$comic->updated_at}}</td>
           <td>
             <div class="d-flex">
-              <a href="{{route('comics.show', $comic)}}" class="mx-1">
+              <a href="{{route('comic.show', $comic)}}" class="mx-1">
                   <i class="fa-regular fa-eye"></i>
               </a>
-              <a href="{{route('comics.edit', $comic)}}" class="mx-1">
+              <a href="{{route('comic.edit', $comic)}}" class="mx-1">
                 <i class="fa-solid fa-pencil"></i>
               </a>
               <a href="#" data-bs-toggle="modal" data-bs-target="#delete-modal-{{$comic->id}}" class="mx-1">
@@ -62,7 +62,7 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retry</button>
                       
-                      <form action="{{route('comics.destroy', $comic)}}" method="POST" class="mx-1">
+                      <form action="{{route('comic.destroy', $comic)}}" method="POST" class="mx-1">
                       @csrf
                       @method('DELETE')
                       <button class="btn btn-danger">

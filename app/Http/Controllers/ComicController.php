@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Comics;
+use App\Models\Comic;
 
 
 use Illuminate\Http\Request;
@@ -10,43 +10,43 @@ class ComicController extends Controller
 {
     public function index()
   {
-    $comics = Comics::all();
+    $comics = Comic::all();
     return view('comic.index', compact('comics'));
   }
 
 
   public function create()
   {
-      return response(view('comics.create'));
+      return response(view('comic.create'));
   }
   public function store(Request $request)
   {
       $data = $request->all();
-      $this->validation($data);
+   //   $this->validation($data);
 
       $comic = new Comic();
       $comic->fill($data);
       $comic->save();
-      return response(redirect()->route('comics.show', $comic)
+      return response(redirect()->route('comic.show', $comic)
           // * To add flash messages
           ->with('message', 'Comic saved succesfully!')
           ->with('message_type', 'success'));
   }
   public function show(Comic $comic)
   {
-      return response(view('comics.show', compact('comic')));
+      return response(view('comic.show', compact('comic')));
   }
   public function edit(Comic $comic)
   {
-      return response(view('comics.edit', compact('comic')));
+      return response(view('comic.edit', compact('comic')));
   }
 
   public function update(Request $request, Comic $comic)
   {
       $data = $request->all();
-      $this->validation($data);
+  //    $this->validation($data);
       $comic->update($data);
-      return response(redirect()->route('comics.show', $comic)
+      return response(redirect()->route('comic.show', $comic)
           // * To add flash messages
           ->with('message', 'Comic edited succesfully!')
           ->with('message_type', 'success'));
@@ -56,14 +56,14 @@ class ComicController extends Controller
   {
       $comic->delete();
       // * Redirect to index
-      return response(redirect()->route('comics.index')
+      return response(redirect()->route('comic.index')
           // * To add flash messages
           ->with('message', 'Comic deleted succesfully!')
           ->with('message_type', 'danger'));
 
   }
 
-  private function validation($data)
+ /* private function validation($data)
   {
       Validator::make(
           // Data to validate
@@ -109,7 +109,7 @@ class ComicController extends Controller
       )->validate();
 
   }
-
+*/
 
 
 }
